@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Añadir panel",
+        "description": "Elige un grupo de plantillas o crea un panel personalizado.",
+        "data": {
+          "template_group": "Plantilla"
+        }
+      },
+      "developer_tools": {
+        "title": "Herramientas de desarrollador",
+        "description": "Elige la subpágina deseada.",
+        "data": {
+          "template_item": "Subpágina"
+        }
+      },
+      "custom": {
+        "title": "Panel personalizado",
+        "description": "Establece el título en la barra lateral, la URL de destino y las opciones.",
+        "data": {
+          "tab_title": "Título en la barra lateral",
+          "url": "URL de destino",
+          "icon": "Icono",
+          "require_admin": "Solo administradores"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Esta entrada ya está configurada."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Editar panel",
+        "description": "Elige si deseas editar una plantilla o un panel personalizado.",
+        "data": {
+          "template_group": "Plantilla"
+        }
+      },
+      "edit_devtools": {
+        "title": "Editar herramientas de desarrollador",
+        "description": "Elige la subpágina deseada.",
+        "data": {
+          "template_item": "Subpágina"
+        }
+      },
+      "edit_custom": {
+        "title": "Editar panel personalizado",
+        "description": "Edita la entrada existente en la barra lateral.",
+        "data": {
+          "tab_title": "Título en la barra lateral",
+          "url": "URL de destino",
+          "icon": "Icono",
+          "require_admin": "Solo administradores"
+        }
+      }
+    }
+  }
+}

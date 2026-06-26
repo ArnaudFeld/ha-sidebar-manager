@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Panel hinzufügen",
+        "description": "Wähle eine Vorlagengruppe oder lege ein benutzerdefiniertes Panel an.",
+        "data": {
+          "template_group": "Vorlage"
+        }
+      },
+      "developer_tools": {
+        "title": "Entwicklerwerkzeuge",
+        "description": "Wähle die gewünschte Unterseite.",
+        "data": {
+          "template_item": "Unterseite"
+        }
+      },
+      "custom": {
+        "title": "Benutzerdefiniertes Panel",
+        "description": "Lege Titel, Ziel-URL und Optionen fest.",
+        "data": {
+          "tab_title": "Titel in der Seitenleiste",
+          "url": "Ziel-URL",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Dieser Eintrag ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Panel bearbeiten",
+        "description": "Wähle, ob du ein Preset oder ein benutzerdefiniertes Panel bearbeiten möchtest.",
+        "data": {
+          "template_group": "Vorlage"
+        }
+      },
+      "edit_devtools": {
+        "title": "Entwicklerwerkzeuge bearbeiten",
+        "description": "Wähle die gewünschte Unterseite.",
+        "data": {
+          "template_item": "Unterseite"
+        }
+      },
+      "edit_custom": {
+        "title": "Benutzerdefiniertes Panel bearbeiten",
+        "description": "Bearbeite den bestehenden Seitenleisten-Eintrag.",
+        "data": {
+          "tab_title": "Titel in der Seitenleiste",
+          "url": "Ziel-URL",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      }
+    }
+  }
+}

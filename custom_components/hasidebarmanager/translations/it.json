@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aggiungi pannello",
+        "description": "Scegli un gruppo di modelli oppure crea un pannello personalizzato.",
+        "data": {
+          "template_group": "Modello"
+        }
+      },
+      "developer_tools": {
+        "title": "Strumenti per sviluppatori",
+        "description": "Scegli la sottopagina desiderata.",
+        "data": {
+          "template_item": "Sottopagina"
+        }
+      },
+      "custom": {
+        "title": "Pannello personalizzato",
+        "description": "Imposta il titolo nella barra laterale, l'URL di destinazione e le opzioni.",
+        "data": {
+          "tab_title": "Titolo nella barra laterale",
+          "url": "URL di destinazione",
+          "icon": "Icona",
+          "require_admin": "Solo amministratori"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Questa voce è già configurata."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Modifica pannello",
+        "description": "Scegli se modificare un preset o un pannello personalizzato.",
+        "data": {
+          "template_group": "Modello"
+        }
+      },
+      "edit_devtools": {
+        "title": "Modifica Strumenti per sviluppatori",
+        "description": "Scegli la sottopagina desiderata.",
+        "data": {
+          "template_item": "Sottopagina"
+        }
+      },
+      "edit_custom": {
+        "title": "Modifica pannello personalizzato",
+        "description": "Modifica la voce esistente nella barra laterale.",
+        "data": {
+          "tab_title": "Titolo nella barra laterale",
+          "url": "URL di destinazione",
+          "icon": "Icona",
+          "require_admin": "Solo amministratori"
+        }
+      }
+    }
+  }
+}

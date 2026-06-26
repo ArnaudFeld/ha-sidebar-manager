@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dodaj panel",
+        "description": "Odaberite grupu predložaka ili izradite prilagođeni panel.",
+        "data": {
+          "template_group": "Predložak"
+        }
+      },
+      "developer_tools": {
+        "title": "Razvojni alati",
+        "description": "Odaberite željenu podstranicu.",
+        "data": {
+          "template_item": "Podstranica"
+        }
+      },
+      "custom": {
+        "title": "Prilagođeni panel",
+        "description": "Postavite naslov u bočnoj traci, ciljnu URL adresu i opcije.",
+        "data": {
+          "tab_title": "Naslov u bočnoj traci",
+          "url": "Ciljna URL adresa",
+          "icon": "Ikona",
+          "require_admin": "Samo administratori"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Ovaj unos je već konfiguriran."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Uredi panel",
+        "description": "Odaberite želite li urediti predložak ili prilagođeni panel.",
+        "data": {
+          "template_group": "Predložak"
+        }
+      },
+      "edit_devtools": {
+        "title": "Uredi razvojne alate",
+        "description": "Odaberite željenu podstranicu.",
+        "data": {
+          "template_item": "Podstranica"
+        }
+      },
+      "edit_custom": {
+        "title": "Uredi prilagođeni panel",
+        "description": "Uredite postojeći unos u bočnoj traci.",
+        "data": {
+          "tab_title": "Naslov u bočnoj traci",
+          "url": "Ciljna URL adresa",
+          "icon": "Ikona",
+          "require_admin": "Samo administratori"
+        }
+      }
+    }
+  }
+}

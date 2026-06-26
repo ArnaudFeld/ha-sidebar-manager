@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Paneel toevoegen",
+        "description": "Kies een sjabloongroep of maak een aangepast paneel aan.",
+        "data": {
+          "template_group": "Sjabloon"
+        }
+      },
+      "developer_tools": {
+        "title": "Ontwikkelaarstools",
+        "description": "Kies de gewenste subpagina.",
+        "data": {
+          "template_item": "Subpagina"
+        }
+      },
+      "custom": {
+        "title": "Aangepast paneel",
+        "description": "Stel de titel in de zijbalk, de doel-URL en de opties in.",
+        "data": {
+          "tab_title": "Titel in de zijbalk",
+          "url": "Doel-URL",
+          "icon": "Pictogram",
+          "require_admin": "Alleen beheerders"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Deze invoer is al geconfigureerd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Paneel bewerken",
+        "description": "Kies of je een preset of een aangepast paneel wilt bewerken.",
+        "data": {
+          "template_group": "Sjabloon"
+        }
+      },
+      "edit_devtools": {
+        "title": "Ontwikkelaarstools bewerken",
+        "description": "Kies de gewenste subpagina.",
+        "data": {
+          "template_item": "Subpagina"
+        }
+      },
+      "edit_custom": {
+        "title": "Aangepast paneel bewerken",
+        "description": "Bewerk het bestaande item in de zijbalk.",
+        "data": {
+          "tab_title": "Titel in de zijbalk",
+          "url": "Doel-URL",
+          "icon": "Pictogram",
+          "require_admin": "Alleen beheerders"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ajouter un panneau",
+        "description": "Choisissez un groupe de modèles ou créez un panneau personnalisé.",
+        "data": {
+          "template_group": "Modèle"
+        }
+      },
+      "developer_tools": {
+        "title": "Outils de développement",
+        "description": "Choisissez la sous-page souhaitée.",
+        "data": {
+          "template_item": "Sous-page"
+        }
+      },
+      "custom": {
+        "title": "Panneau personnalisé",
+        "description": "Définissez le titre dans la barre latérale, l'URL cible et les options.",
+        "data": {
+          "tab_title": "Titre dans la barre latérale",
+          "url": "URL cible",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Cette entrée est déjà configurée."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Modifier le panneau",
+        "description": "Choisissez si vous voulez modifier un préréglage ou un panneau personnalisé.",
+        "data": {
+          "template_group": "Modèle"
+        }
+      },
+      "edit_devtools": {
+        "title": "Modifier les outils de développement",
+        "description": "Choisissez la sous-page souhaitée.",
+        "data": {
+          "template_item": "Sous-page"
+        }
+      },
+      "edit_custom": {
+        "title": "Modifier le panneau personnalisé",
+        "description": "Modifiez l'entrée existante dans la barre latérale.",
+        "data": {
+          "tab_title": "Titre dans la barre latérale",
+          "url": "URL cible",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
+        }
+      }
+    }
+  }
+}

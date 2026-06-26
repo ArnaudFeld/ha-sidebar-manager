@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Seitenleisten-Eintrag hinzufügen",
+        "description": "Wähle zuerst, ob du einen Entwicklerwerkzeuge-Eintrag oder einen benutzerdefinierten Eintrag anlegen möchtest.",
+        "data": {
+          "template_group": "Eintragstyp"
+        }
+      },
+      "developer_tools": {
+        "title": "Entwicklerwerkzeuge",
+        "description": "Wähle die Unterseite und passe bei Bedarf Titel, Icon und Optionen an.",
+        "data": {
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      },
+      "custom": {
+        "title": "Benutzerdefinierter Eintrag",
+        "description": "Lege Titel, Ziel-URL und Optionen fest.",
+        "data": {
+          "tab_title": "Titel in der Seitenleiste",
+          "url": "Ziel-URL",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Dieser Eintrag ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Seitenleisten-Eintrag bearbeiten",
+        "description": "Wähle, ob du einen Entwicklerwerkzeuge-Eintrag oder einen benutzerdefinierten Eintrag bearbeiten möchtest.",
+        "data": {
+          "template_group": "Eintragstyp"
+        }
+      },
+      "edit_devtools": {
+        "title": "Entwicklerwerkzeuge bearbeiten",
+        "description": "Wähle die Unterseite und passe bei Bedarf Titel, Icon und Optionen an.",
+        "data": {
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      },
+      "edit_custom": {
+        "title": "Benutzerdefinierten Eintrag bearbeiten",
+        "description": "Bearbeite den bestehenden Seitenleisten-Eintrag.",
+        "data": {
+          "tab_title": "Titel in der Seitenleiste",
+          "url": "Ziel-URL",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add panel",
+        "description": "Choose a template group or create a custom panel.",
+        "data": {
+          "template_group": "Template"
+        }
+      },
+      "developer_tools": {
+        "title": "Developer Tools",
+        "description": "Choose the desired subpage.",
+        "data": {
+          "template_item": "Subpage"
+        }
+      },
+      "custom": {
+        "title": "Custom panel",
+        "description": "Set the sidebar title, target URL, and options.",
+        "data": {
+          "tab_title": "Sidebar title",
+          "url": "Target URL",
+          "icon": "Icon",
+          "require_admin": "Administrators only"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This entry is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit panel",
+        "description": "Choose whether to edit a preset or a custom panel.",
+        "data": {
+          "template_group": "Template"
+        }
+      },
+      "edit_devtools": {
+        "title": "Edit Developer Tools",
+        "description": "Choose the desired subpage.",
+        "data": {
+          "template_item": "Subpage"
+        }
+      },
+      "edit_custom": {
+        "title": "Edit custom panel",
+        "description": "Edit the existing sidebar entry.",
+        "data": {
+          "tab_title": "Sidebar title",
+          "url": "Target URL",
+          "icon": "Icon",
+          "require_admin": "Administrators only"
+        }
+      }
+    }
+  }
+}
