@@ -1,7 +1,7 @@
 {
   "domain": "hasidebarmanager",
   "name": "HA Sidebar Manager",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "config_flow": true,
   "documentation": "https://github.com/arnaudfeld/ha-sidebar-manager",
   "issue_tracker": "https://github.com/arnaudfeld/ha-sidebar-manager/issues",
