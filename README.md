@@ -2,7 +2,7 @@
 
 ![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.5%2B-blue.svg)
-![Version](https://img.shields.io/badge/Version-0.4.0-green.svg)
+![Version](https://img.shields.io/badge/Version-0.4.1-green.svg)
 
 Eine benutzerdefinierte Home Assistant Integration, mit der du beliebige interne HA-Seiten als eigene Einträge in der Seitenleiste anlegen kannst. Kein Editieren von YAML-Dateien nötig, alles läuft über die HA-Oberfläche.
 
@@ -23,6 +23,10 @@ Eine benutzerdefinierte Home Assistant Integration, mit der du beliebige interne
 
 ## Installation via HACS
 
+### Einfache Installation (empfohlen)
+Klicke auf den Button oben und folge den Anweisungen in Home Assistant.
+
+### Manuelle HACS-Installation
 1. HACS öffnen
 2. Oben rechts auf die drei Punkte klicken und "Benutzerdefinierte Repositories" auswählen
 3. URL `https://github.com/arnaudfeld/ha-sidebar-manager` eintragen, Kategorie "Integration" auswählen und hinzufügen
@@ -70,7 +74,7 @@ MIT License. Siehe [LICENSE](LICENSE) für Details.
 
 ![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.5%2B-blue.svg)
-![Version](https://img.shields.io/badge/Version-0.4.0-green.svg)
+![Version](https://img.shields.io/badge/Version-0.4.1-green.svg)
 
 A custom Home Assistant integration that lets you add any internal HA page as its own entry in the sidebar. No YAML editing required, everything is configured through the HA interface.
 
@@ -91,6 +95,10 @@ A custom Home Assistant integration that lets you add any internal HA page as it
 
 ## Installation via HACS
 
+### Easy installation (recommended)
+Click the button above and follow the instructions in Home Assistant.
+
+### Manual HACS installation
 1. Open HACS
 2. Click the three dots in the top right and select "Custom repositories"
 3. Enter `https://github.com/arnaudfeld/ha-sidebar-manager`, select category "Integration" and add it
