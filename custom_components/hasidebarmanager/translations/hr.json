@@ -2,27 +2,30 @@
   "config": {
     "step": {
       "user": {
-        "title": "Dodaj panel",
-        "description": "Odaberite grupu predložaka ili izradite prilagođeni panel.",
+        "title": "Dodaj unos u bočnu traku",
+        "description": "Odabrite želite li dodati unos alata za razvoj ili prilagođeni unos.",
         "data": {
-          "template_group": "Predložak"
+          "template_group": "Vrsta unosa"
         }
       },
       "developer_tools": {
-        "title": "Razvojni alati",
-        "description": "Odaberite željenu podstranicu.",
+        "title": "Alati za razvoj",
+        "description": "Odaberite podstranicu i po potrebi prilagodite naslov, ikonu i opcije.",
         "data": {
-          "template_item": "Podstranica"
+          "template_item": "Podstranica",
+          "tab_title": "Naslov u bočnoj traci",
+          "icon": "Ikona",
+          "require_admin": "Samo za administratore"
         }
       },
       "custom": {
-        "title": "Prilagođeni panel",
-        "description": "Postavite naslov u bočnoj traci, ciljnu URL adresu i opcije.",
+        "title": "Prilagođeni unos",
+        "description": "Postavite naslov, odredišni URL i opcije.",
         "data": {
           "tab_title": "Naslov u bočnoj traci",
-          "url": "Ciljna URL adresa",
+          "url": "Odredišni URL",
           "icon": "Ikona",
-          "require_admin": "Samo administratori"
+          "require_admin": "Samo za administratore"
         }
       }
     },
@@ -33,28 +36,49 @@
   "options": {
     "step": {
       "init": {
-        "title": "Uredi panel",
-        "description": "Odaberite želite li urediti predložak ili prilagođeni panel.",
+        "title": "Uredi unos u bočnoj traci",
+        "description": "Odaberite želite li urediti unos alata za razvoj ili prilagođeni unos.",
         "data": {
-          "template_group": "Predložak"
+          "template_group": "Vrsta unosa"
         }
       },
       "edit_devtools": {
-        "title": "Uredi razvojne alate",
-        "description": "Odaberite željenu podstranicu.",
+        "title": "Uredi alate za razvoj",
+        "description": "Odaberite podstranicu i po potrebi prilagodite naslov, ikonu i opcije.",
         "data": {
-          "template_item": "Podstranica"
+          "template_item": "Podstranica",
+          "tab_title": "Naslov u bočnoj traci",
+          "icon": "Ikona",
+          "require_admin": "Samo za administratore"
         }
       },
       "edit_custom": {
-        "title": "Uredi prilagođeni panel",
+        "title": "Uredi prilagođeni unos",
         "description": "Uredite postojeći unos u bočnoj traci.",
         "data": {
           "tab_title": "Naslov u bočnoj traci",
-          "url": "Ciljna URL adresa",
+          "url": "Odredišni URL",
           "icon": "Ikona",
-          "require_admin": "Samo administratori"
+          "require_admin": "Samo za administratore"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Alati za razvoj",
+        "custom": "Prilagođeno"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "Stanja",
+        "service": "Usluge",
+        "template": "Predlošci",
+        "event": "Događaji",
+        "yaml": "YAML",
+        "statistics": "Statistika"
       }
     }
   }

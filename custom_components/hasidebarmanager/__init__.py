@@ -12,15 +12,19 @@ from homeassistant.components.frontend import (
 from homeassistant.components.http import StaticPathConfig
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.translation import async_get_translations
 
 from .const import (
     CONF_ICON,
     CONF_REQUIRE_ADMIN,
     CONF_TAB_TITLE,
+    CONF_TEMPLATE_GROUP,
+    CONF_TEMPLATE_ITEM,
     CONF_URL,
     DEFAULT_ICON,
     DEFAULT_REQUIRE_ADMIN,
     DOMAIN,
+    TEMPLATE_GROUP_DEVTOOLS,
 )
 
 LOGGER = logging.getLogger(__name__)
@@ -134,18 +138,52 @@ async def _register_redirect_resource(hass: HomeAssistant) -> None:
             msg = str(exc)
             if "already registered" not in msg and "will never be executed" not in msg:
                 raise
-            LOGGER.debug("Static path already registered, reusing existing route: %s", msg)
+            LOGGER.debug(
+                "Static path already registered, reusing existing route: %s", msg
+            )
 
         hass.data[_FLAG_KEY] = True
+
+
+_RELOAD_KEYS = (
+    CONF_TAB_TITLE,
+    CONF_URL,
+    CONF_ICON,
+    CONF_REQUIRE_ADMIN,
+    CONF_TEMPLATE_GROUP,
+    CONF_TEMPLATE_ITEM,
+)
 
 
 def _panel_name(entry: ConfigEntry) -> str:
     return f"{DOMAIN}_{entry.entry_id[:8]}"
 
 
+async def _default_title(hass: HomeAssistant, entry: ConfigEntry) -> str:
+    """Return the translated sidebar title for an entry without a custom one.
+
+    An empty ``tab_title`` means the user accepted the default in the flow. The
+    label is resolved here rather than when the entry is created so the sidebar
+    follows the instance language.
+    """
+    if entry.data.get(CONF_TEMPLATE_GROUP) != TEMPLATE_GROUP_DEVTOOLS:
+        return ""
+
+    item = entry.data.get(CONF_TEMPLATE_ITEM)
+    if not item:
+        return ""
+
+    translations = await async_get_translations(
+        hass, hass.config.language, "selector", [DOMAIN]
+    )
+    return translations.get(
+        f"component.{DOMAIN}.selector.template_item.options.{item}", ""
+    )
+
+
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up HA Sidebar Manager from a config entry."""
-    tab_title: str = entry.data[CONF_TAB_TITLE]
+    tab_title: str = entry.data[CONF_TAB_TITLE] or await _default_title(hass, entry)
     url: str = entry.data[CONF_URL]
     icon: str = entry.data.get(CONF_ICON, DEFAULT_ICON)
     require_admin: bool = entry.data.get(CONF_REQUIRE_ADMIN, DEFAULT_REQUIRE_ADMIN)
@@ -182,10 +220,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
         "panel_name": panel_name,
-        "tab_title": tab_title,
-        "url": url,
-        "icon": icon,
-        "require_admin": require_admin,
+        # Snapshot of the raw entry data the panel was built from, so the
+        # update listener can tell a real change from a rename.
+        "data": dict(entry.data),
     }
 
     entry.async_on_unload(entry.add_update_listener(async_update_listener))
@@ -207,5 +244,16 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 
 async def async_update_listener(hass: HomeAssistant, entry: ConfigEntry) -> None:
-    """Reload the config entry when options change."""
-    await hass.config_entries.async_reload(entry.entry_id)
+    """Reload the config entry when a rendered setting changes.
+
+    Setup reads these values to register the panel, so a change to any of them
+    needs a reload. Other updates, such as renaming the entry, leave the panel
+    untouched and must not trigger one.
+    """
+    stored = hass.data.get(DOMAIN, {}).get(entry.entry_id)
+    if stored is None:
+        return
+
+    previous = stored["data"]
+    if any(entry.data.get(key) != previous.get(key) for key in _RELOAD_KEYS):
+        await hass.config_entries.async_reload(entry.entry_id)

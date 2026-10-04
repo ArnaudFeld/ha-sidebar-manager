@@ -2,7 +2,7 @@
 
 ![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.5%2B-blue.svg)
-![Version](https://img.shields.io/badge/Version-0.4.1-green.svg)
+![Version](https://img.shields.io/badge/Version-0.4.2-green.svg)
 
 Eine benutzerdefinierte Home Assistant Integration, mit der du beliebige interne HA-Seiten als eigene Einträge in der Seitenleiste anlegen kannst. Kein Editieren von YAML-Dateien nötig, alles läuft über die HA-Oberfläche.
 
@@ -60,6 +60,7 @@ Jeder Eintrag wird sofort in der Seitenleiste sichtbar. Zum Bearbeiten einfach a
 - Funktioniert nur mit internen Home Assistant URLs (z.B. `/lovelace/0`, `/developer-tools/state`)
 - Externe URLs werden nicht unterstützt
 - Getestet mit Home Assistant 2026.5 und 2026.6
+- Die Übersetzungen der Auswahlfelder im Konfigurationsdialog basieren auf der Arbeit von [DemonIOI/ha-sidebar-manager](https://github.com/DemonIOI/ha-sidebar-manager). Danke für die Vorlage.
 
 ---
 
@@ -74,7 +75,7 @@ MIT License. Siehe [LICENSE](LICENSE) für Details.
 
 ![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.5%2B-blue.svg)
-![Version](https://img.shields.io/badge/Version-0.4.1-green.svg)
+![Version](https://img.shields.io/badge/Version-0.4.2-green.svg)
 
 A custom Home Assistant integration that lets you add any internal HA page as its own entry in the sidebar. No YAML editing required, everything is configured through the HA interface.
 
@@ -132,6 +133,7 @@ Each entry will appear in the sidebar immediately. To edit, click "Configure" on
 - Only works with internal Home Assistant URLs (e.g. `/lovelace/0`, `/developer-tools/state`)
 - External URLs are not supported
 - Tested with Home Assistant 2026.5 and 2026.6
+- The config flow selector translations are based on the work of [DemonIOI/ha-sidebar-manager](https://github.com/DemonIOI/ha-sidebar-manager). Thanks for the groundwork.
 
 ---
 

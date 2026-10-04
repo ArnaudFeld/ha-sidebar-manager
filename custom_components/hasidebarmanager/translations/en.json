@@ -2,22 +2,25 @@
   "config": {
     "step": {
       "user": {
-        "title": "Add panel",
-        "description": "Choose a template group or create a custom panel.",
+        "title": "Add sidebar entry",
+        "description": "Choose whether to add a Developer Tools entry or a custom entry.",
         "data": {
-          "template_group": "Template"
+          "template_group": "Entry type"
         }
       },
       "developer_tools": {
         "title": "Developer Tools",
-        "description": "Choose the desired subpage.",
+        "description": "Choose the subpage and adjust title, icon and options if needed.",
         "data": {
-          "template_item": "Subpage"
+          "template_item": "Subpage",
+          "tab_title": "Sidebar title",
+          "icon": "Icon",
+          "require_admin": "Administrators only"
         }
       },
       "custom": {
-        "title": "Custom panel",
-        "description": "Set the sidebar title, target URL, and options.",
+        "title": "Custom entry",
+        "description": "Set the sidebar title, target URL and options.",
         "data": {
           "tab_title": "Sidebar title",
           "url": "Target URL",
@@ -33,21 +36,24 @@
   "options": {
     "step": {
       "init": {
-        "title": "Edit panel",
-        "description": "Choose whether to edit a preset or a custom panel.",
+        "title": "Edit sidebar entry",
+        "description": "Choose whether to edit a Developer Tools entry or a custom entry.",
         "data": {
-          "template_group": "Template"
+          "template_group": "Entry type"
         }
       },
       "edit_devtools": {
         "title": "Edit Developer Tools",
-        "description": "Choose the desired subpage.",
+        "description": "Choose the subpage and adjust title, icon and options if needed.",
         "data": {
-          "template_item": "Subpage"
+          "template_item": "Subpage",
+          "tab_title": "Sidebar title",
+          "icon": "Icon",
+          "require_admin": "Administrators only"
         }
       },
       "edit_custom": {
-        "title": "Edit custom panel",
+        "title": "Edit custom entry",
         "description": "Edit the existing sidebar entry.",
         "data": {
           "tab_title": "Sidebar title",
@@ -55,6 +61,24 @@
           "icon": "Icon",
           "require_admin": "Administrators only"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Developer Tools",
+        "custom": "Custom"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "States",
+        "service": "Services",
+        "template": "Templates",
+        "event": "Events",
+        "yaml": "YAML",
+        "statistics": "Statistics"
       }
     }
   }

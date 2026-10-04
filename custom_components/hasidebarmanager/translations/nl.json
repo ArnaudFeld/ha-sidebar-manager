@@ -2,59 +2,83 @@
   "config": {
     "step": {
       "user": {
-        "title": "Paneel toevoegen",
-        "description": "Kies een sjabloongroep of maak een aangepast paneel aan.",
+        "title": "Zijbalkitem toevoegen",
+        "description": "Kies of je een item van Ontwikkelaarstools of een aangepast item wilt toevoegen.",
         "data": {
-          "template_group": "Sjabloon"
+          "template_group": "Type item"
         }
       },
       "developer_tools": {
         "title": "Ontwikkelaarstools",
-        "description": "Kies de gewenste subpagina.",
+        "description": "Kies de subpagina en pas zo nodig titel, pictogram en opties aan.",
         "data": {
-          "template_item": "Subpagina"
+          "template_item": "Subpagina",
+          "tab_title": "Titel in de zijbalk",
+          "icon": "Pictogram",
+          "require_admin": "Alleen voor beheerders"
         }
       },
       "custom": {
-        "title": "Aangepast paneel",
-        "description": "Stel de titel in de zijbalk, de doel-URL en de opties in.",
+        "title": "Aangepast item",
+        "description": "Stel titel, doel-URL en opties vast.",
         "data": {
           "tab_title": "Titel in de zijbalk",
           "url": "Doel-URL",
           "icon": "Pictogram",
-          "require_admin": "Alleen beheerders"
+          "require_admin": "Alleen voor beheerders"
         }
       }
     },
     "abort": {
-      "already_configured": "Deze invoer is al geconfigureerd."
+      "already_configured": "Dit item is al geconfigureerd."
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "Paneel bewerken",
-        "description": "Kies of je een preset of een aangepast paneel wilt bewerken.",
+        "title": "Zijbalkitem bewerken",
+        "description": "Kies of je een item van Ontwikkelaarstools of een aangepast item wilt bewerken.",
         "data": {
-          "template_group": "Sjabloon"
+          "template_group": "Type item"
         }
       },
       "edit_devtools": {
         "title": "Ontwikkelaarstools bewerken",
-        "description": "Kies de gewenste subpagina.",
+        "description": "Kies de subpagina en pas zo nodig titel, pictogram en opties aan.",
         "data": {
-          "template_item": "Subpagina"
+          "template_item": "Subpagina",
+          "tab_title": "Titel in de zijbalk",
+          "icon": "Pictogram",
+          "require_admin": "Alleen voor beheerders"
         }
       },
       "edit_custom": {
-        "title": "Aangepast paneel bewerken",
-        "description": "Bewerk het bestaande item in de zijbalk.",
+        "title": "Aangepast item bewerken",
+        "description": "Bewerk het bestaande zijbalkitem.",
         "data": {
           "tab_title": "Titel in de zijbalk",
           "url": "Doel-URL",
           "icon": "Pictogram",
-          "require_admin": "Alleen beheerders"
+          "require_admin": "Alleen voor beheerders"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Ontwikkelaarstools",
+        "custom": "Aangepast"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "Staten",
+        "service": "Diensten",
+        "template": "Sjablonen",
+        "event": "Gebeurtenissen",
+        "yaml": "YAML",
+        "statistics": "Statistieken"
       }
     }
   }

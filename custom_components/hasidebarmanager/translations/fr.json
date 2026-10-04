@@ -2,22 +2,25 @@
   "config": {
     "step": {
       "user": {
-        "title": "Ajouter un panneau",
-        "description": "Choisissez un groupe de modèles ou créez un panneau personnalisé.",
+        "title": "Ajouter une entrée dans la barre latérale",
+        "description": "Choisissez si vous voulez ajouter une entrée Outils de développement ou une entrée personnalisée.",
         "data": {
-          "template_group": "Modèle"
+          "template_group": "Type d'entrée"
         }
       },
       "developer_tools": {
         "title": "Outils de développement",
-        "description": "Choisissez la sous-page souhaitée.",
+        "description": "Choisissez la sous-page et ajustez le titre, l'icône et les options si nécessaire.",
         "data": {
-          "template_item": "Sous-page"
+          "template_item": "Sous-page",
+          "tab_title": "Titre dans la barre latérale",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
         }
       },
       "custom": {
-        "title": "Panneau personnalisé",
-        "description": "Définissez le titre dans la barre latérale, l'URL cible et les options.",
+        "title": "Entrée personnalisée",
+        "description": "Définissez le titre, l'URL cible et les options.",
         "data": {
           "tab_title": "Titre dans la barre latérale",
           "url": "URL cible",
@@ -33,28 +36,49 @@
   "options": {
     "step": {
       "init": {
-        "title": "Modifier le panneau",
-        "description": "Choisissez si vous voulez modifier un préréglage ou un panneau personnalisé.",
+        "title": "Modifier l'entrée de la barre latérale",
+        "description": "Choisissez si vous voulez modifier une entrée Outils de développement ou une entrée personnalisée.",
         "data": {
-          "template_group": "Modèle"
+          "template_group": "Type d'entrée"
         }
       },
       "edit_devtools": {
-        "title": "Modifier les outils de développement",
-        "description": "Choisissez la sous-page souhaitée.",
+        "title": "Modifier Outils de développement",
+        "description": "Choisissez la sous-page et ajustez le titre, l'icône et les options si nécessaire.",
         "data": {
-          "template_item": "Sous-page"
+          "template_item": "Sous-page",
+          "tab_title": "Titre dans la barre latérale",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
         }
       },
       "edit_custom": {
-        "title": "Modifier le panneau personnalisé",
-        "description": "Modifiez l'entrée existante dans la barre latérale.",
+        "title": "Modifier l'entrée personnalisée",
+        "description": "Modifiez l'entrée existante de la barre latérale.",
         "data": {
           "tab_title": "Titre dans la barre latérale",
           "url": "URL cible",
           "icon": "Icône",
           "require_admin": "Administrateurs uniquement"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Outils de développement",
+        "custom": "Personnalisée"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "États",
+        "service": "Services",
+        "template": "Modèles",
+        "event": "Événements",
+        "yaml": "YAML",
+        "statistics": "Statistiques"
       }
     }
   }

@@ -2,27 +2,30 @@
   "config": {
     "step": {
       "user": {
-        "title": "Aggiungi pannello",
-        "description": "Scegli un gruppo di modelli oppure crea un pannello personalizzato.",
+        "title": "Aggiungi una voce alla barra laterale",
+        "description": "Scegli se vuoi aggiungere una voce degli Strumenti per sviluppatori o una voce personalizzata.",
         "data": {
-          "template_group": "Modello"
+          "template_group": "Tipo di voce"
         }
       },
       "developer_tools": {
         "title": "Strumenti per sviluppatori",
-        "description": "Scegli la sottopagina desiderata.",
+        "description": "Scegli la sottopagina e se necessario modifica titolo, icona e opzioni.",
         "data": {
-          "template_item": "Sottopagina"
+          "template_item": "Sottopagina",
+          "tab_title": "Titolo nella barra laterale",
+          "icon": "Icona",
+          "require_admin": "Solo per amministratori"
         }
       },
       "custom": {
-        "title": "Pannello personalizzato",
-        "description": "Imposta il titolo nella barra laterale, l'URL di destinazione e le opzioni.",
+        "title": "Voce personalizzata",
+        "description": "Imposta titolo, URL di destinazione e opzioni.",
         "data": {
           "tab_title": "Titolo nella barra laterale",
           "url": "URL di destinazione",
           "icon": "Icona",
-          "require_admin": "Solo amministratori"
+          "require_admin": "Solo per amministratori"
         }
       }
     },
@@ -33,28 +36,49 @@
   "options": {
     "step": {
       "init": {
-        "title": "Modifica pannello",
-        "description": "Scegli se modificare un preset o un pannello personalizzato.",
+        "title": "Modifica voce della barra laterale",
+        "description": "Scegli se vuoi modificare una voce degli Strumenti per sviluppatori o una voce personalizzata.",
         "data": {
-          "template_group": "Modello"
+          "template_group": "Tipo di voce"
         }
       },
       "edit_devtools": {
         "title": "Modifica Strumenti per sviluppatori",
-        "description": "Scegli la sottopagina desiderata.",
+        "description": "Scegli la sottopagina e se necessario modifica titolo, icona e opzioni.",
         "data": {
-          "template_item": "Sottopagina"
+          "template_item": "Sottopagina",
+          "tab_title": "Titolo nella barra laterale",
+          "icon": "Icona",
+          "require_admin": "Solo per amministratori"
         }
       },
       "edit_custom": {
-        "title": "Modifica pannello personalizzato",
+        "title": "Modifica voce personalizzata",
         "description": "Modifica la voce esistente nella barra laterale.",
         "data": {
           "tab_title": "Titolo nella barra laterale",
           "url": "URL di destinazione",
           "icon": "Icona",
-          "require_admin": "Solo amministratori"
+          "require_admin": "Solo per amministratori"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Strumenti per sviluppatori",
+        "custom": "Personalizzata"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "Stati",
+        "service": "Servizi",
+        "template": "Modelli",
+        "event": "Eventi",
+        "yaml": "YAML",
+        "statistics": "Statistiche"
       }
     }
   }

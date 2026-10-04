@@ -2,21 +2,24 @@
   "config": {
     "step": {
       "user": {
-        "title": "Panel hinzufügen",
-        "description": "Wähle eine Vorlagengruppe oder lege ein benutzerdefiniertes Panel an.",
+        "title": "Seitenleisten-Eintrag hinzufügen",
+        "description": "Wähle, ob du einen Entwicklerwerkzeuge-Eintrag oder einen benutzerdefinierten Eintrag anlegen möchtest.",
         "data": {
-          "template_group": "Vorlage"
+          "template_group": "Eintragstyp"
         }
       },
       "developer_tools": {
         "title": "Entwicklerwerkzeuge",
-        "description": "Wähle die gewünschte Unterseite.",
+        "description": "Wähle die Unterseite und passe bei Bedarf Titel, Icon und Optionen an.",
         "data": {
-          "template_item": "Unterseite"
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
         }
       },
       "custom": {
-        "title": "Benutzerdefiniertes Panel",
+        "title": "Benutzerdefinierter Eintrag",
         "description": "Lege Titel, Ziel-URL und Optionen fest.",
         "data": {
           "tab_title": "Titel in der Seitenleiste",
@@ -33,21 +36,24 @@
   "options": {
     "step": {
       "init": {
-        "title": "Panel bearbeiten",
-        "description": "Wähle, ob du ein Preset oder ein benutzerdefiniertes Panel bearbeiten möchtest.",
+        "title": "Seitenleisten-Eintrag bearbeiten",
+        "description": "Wähle, ob du einen Entwicklerwerkzeuge-Eintrag oder einen benutzerdefinierten Eintrag bearbeiten möchtest.",
         "data": {
-          "template_group": "Vorlage"
+          "template_group": "Eintragstyp"
         }
       },
       "edit_devtools": {
         "title": "Entwicklerwerkzeuge bearbeiten",
-        "description": "Wähle die gewünschte Unterseite.",
+        "description": "Wähle die Unterseite und passe bei Bedarf Titel, Icon und Optionen an.",
         "data": {
-          "template_item": "Unterseite"
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
         }
       },
       "edit_custom": {
-        "title": "Benutzerdefiniertes Panel bearbeiten",
+        "title": "Benutzerdefinierten Eintrag bearbeiten",
         "description": "Bearbeite den bestehenden Seitenleisten-Eintrag.",
         "data": {
           "tab_title": "Titel in der Seitenleiste",
@@ -55,6 +61,24 @@
           "icon": "Icon",
           "require_admin": "Nur für Administratoren"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Entwicklerwerkzeuge",
+        "custom": "Benutzerdefiniert"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "Zustände",
+        "service": "Dienste",
+        "template": "Template",
+        "event": "Ereignisse",
+        "yaml": "YAML",
+        "statistics": "Statistiken"
       }
     }
   }

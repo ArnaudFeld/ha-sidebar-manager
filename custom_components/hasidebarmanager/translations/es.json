@@ -2,27 +2,30 @@
   "config": {
     "step": {
       "user": {
-        "title": "Añadir panel",
-        "description": "Elige un grupo de plantillas o crea un panel personalizado.",
+        "title": "Añadir entrada en la barra lateral",
+        "description": "Elige si quieres añadir una entrada de Herramientas de desarrollo o una entrada personalizada.",
         "data": {
-          "template_group": "Plantilla"
+          "template_group": "Tipo de entrada"
         }
       },
       "developer_tools": {
-        "title": "Herramientas de desarrollador",
-        "description": "Elige la subpágina deseada.",
+        "title": "Herramientas de desarrollo",
+        "description": "Elige la subpágina y ajusta el título, el icono y las opciones si hace falta.",
         "data": {
-          "template_item": "Subpágina"
+          "template_item": "Subpágina",
+          "tab_title": "Título en la barra lateral",
+          "icon": "Icono",
+          "require_admin": "Solo para administradores"
         }
       },
       "custom": {
-        "title": "Panel personalizado",
-        "description": "Establece el título en la barra lateral, la URL de destino y las opciones.",
+        "title": "Entrada personalizada",
+        "description": "Define el título, la URL de destino y las opciones.",
         "data": {
           "tab_title": "Título en la barra lateral",
           "url": "URL de destino",
           "icon": "Icono",
-          "require_admin": "Solo administradores"
+          "require_admin": "Solo para administradores"
         }
       }
     },
@@ -33,28 +36,49 @@
   "options": {
     "step": {
       "init": {
-        "title": "Editar panel",
-        "description": "Elige si deseas editar una plantilla o un panel personalizado.",
+        "title": "Editar entrada de la barra lateral",
+        "description": "Elige si quieres editar una entrada de Herramientas de desarrollo o una entrada personalizada.",
         "data": {
-          "template_group": "Plantilla"
+          "template_group": "Tipo de entrada"
         }
       },
       "edit_devtools": {
-        "title": "Editar herramientas de desarrollador",
-        "description": "Elige la subpágina deseada.",
+        "title": "Editar Herramientas de desarrollo",
+        "description": "Elige la subpágina y ajusta el título, el icono y las opciones si hace falta.",
         "data": {
-          "template_item": "Subpágina"
+          "template_item": "Subpágina",
+          "tab_title": "Título en la barra lateral",
+          "icon": "Icono",
+          "require_admin": "Solo para administradores"
         }
       },
       "edit_custom": {
-        "title": "Editar panel personalizado",
-        "description": "Edita la entrada existente en la barra lateral.",
+        "title": "Editar entrada personalizada",
+        "description": "Edita la entrada existente de la barra lateral.",
         "data": {
           "tab_title": "Título en la barra lateral",
           "url": "URL de destino",
           "icon": "Icono",
-          "require_admin": "Solo administradores"
+          "require_admin": "Solo para administradores"
         }
+      }
+    }
+  },
+  "selector": {
+    "template_group": {
+      "options": {
+        "developer_tools": "Herramientas de desarrollo",
+        "custom": "Personalizada"
+      }
+    },
+    "template_item": {
+      "options": {
+        "state": "Estados",
+        "service": "Servicios",
+        "template": "Plantillas",
+        "event": "Eventos",
+        "yaml": "YAML",
+        "statistics": "Estadísticas"
       }
     }
   }

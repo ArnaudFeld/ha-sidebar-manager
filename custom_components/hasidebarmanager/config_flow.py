@@ -19,29 +19,16 @@ from .const import (
     TEMPLATE_GROUP_DEVTOOLS,
 )
 
-GROUP_OPTIONS = {
-    TEMPLATE_GROUP_DEVTOOLS: "Entwicklerwerkzeuge",
-    TEMPLATE_GROUP_CUSTOM: "Benutzerdefiniert",
-}
-
-DEVTOOLS_OPTIONS = {
-    "state": "Zustände",
-    "service": "Dienste",
-    "template": "Template",
-    "event": "Ereignisse",
-    "yaml": "YAML",
-    "statistics": "Statistiken",
-}
+GROUP_OPTIONS = [TEMPLATE_GROUP_DEVTOOLS, TEMPLATE_GROUP_CUSTOM]
+DEVTOOLS_OPTIONS = list(DEVTOOLS_TEMPLATES)
 
 
 def _group_selector() -> selector.SelectSelector:
     return selector.SelectSelector(
         selector.SelectSelectorConfig(
-            options=[
-                selector.SelectOptionDict(value=key, label=label)
-                for key, label in GROUP_OPTIONS.items()
-            ],
+            options=GROUP_OPTIONS,
             mode=selector.SelectSelectorMode.LIST,
+            translation_key="template_group",
         )
     )
 
@@ -49,11 +36,9 @@ def _group_selector() -> selector.SelectSelector:
 def _devtools_selector() -> selector.SelectSelector:
     return selector.SelectSelector(
         selector.SelectSelectorConfig(
-            options=[
-                selector.SelectOptionDict(value=key, label=label)
-                for key, label in DEVTOOLS_OPTIONS.items()
-            ],
+            options=DEVTOOLS_OPTIONS,
             mode=selector.SelectSelectorMode.LIST,
+            translation_key="template_item",
         )
     )
 
@@ -130,7 +115,7 @@ class HASidebarManagerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             key = user_input[CONF_TEMPLATE_ITEM]
             template = DEVTOOLS_TEMPLATES[key]
-            title = user_input.get(CONF_TAB_TITLE, "").strip() or DEVTOOLS_OPTIONS[key]
+            title = user_input.get(CONF_TAB_TITLE, "").strip()
             icon = user_input.get(CONF_ICON, template["icon"])
             require_admin = user_input.get(
                 CONF_REQUIRE_ADMIN,
@@ -211,7 +196,7 @@ class HASidebarManagerOptionsFlow(config_entries.OptionsFlow):
         if user_input is not None:
             key = user_input[CONF_TEMPLATE_ITEM]
             template = DEVTOOLS_TEMPLATES[key]
-            title = user_input.get(CONF_TAB_TITLE, "").strip() or DEVTOOLS_OPTIONS[key]
+            title = user_input.get(CONF_TAB_TITLE, "").strip()
             icon = user_input.get(CONF_ICON, template["icon"])
             require_admin = user_input.get(
                 CONF_REQUIRE_ADMIN,
