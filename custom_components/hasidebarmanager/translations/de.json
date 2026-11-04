@@ -18,6 +18,16 @@
           "require_admin": "Nur für Administratoren"
         }
       },
+      "marketplace": {
+        "title": "Marketplace",
+        "description": "Füge den Marketplace zur Seitenleiste hinzu.",
+        "data": {
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      },
       "custom": {
         "title": "Benutzerdefinierter Eintrag",
         "description": "Lege Titel, Ziel-URL und Optionen fest.",
@@ -52,6 +62,16 @@
           "require_admin": "Nur für Administratoren"
         }
       },
+      "edit_marketplace": {
+        "title": "Marketplace bearbeiten",
+        "description": "Bearbeite den Marketplace-Eintrag in der Seitenleiste.",
+        "data": {
+          "template_item": "Unterseite",
+          "tab_title": "Titel in der Seitenleiste",
+          "icon": "Icon",
+          "require_admin": "Nur für Administratoren"
+        }
+      },
       "edit_custom": {
         "title": "Benutzerdefinierten Eintrag bearbeiten",
         "description": "Bearbeite den bestehenden Seitenleisten-Eintrag.",
@@ -68,6 +88,7 @@
     "template_group": {
       "options": {
         "developer_tools": "Entwicklerwerkzeuge",
+        "marketplace": "Marketplace",
         "custom": "Benutzerdefiniert"
       }
     },
@@ -78,7 +99,8 @@
         "template": "Template",
         "event": "Ereignisse",
         "yaml": "YAML",
-        "statistics": "Statistiken"
+        "statistics": "Statistiken",
+        "marketplace": "Marketplace"
       }
     }
   }

@@ -18,6 +18,16 @@
           "require_admin": "Administrateurs uniquement"
         }
       },
+      "marketplace": {
+        "title": "Marketplace",
+        "description": "Ajoutez le Marketplace à la barre latérale.",
+        "data": {
+          "template_item": "Sous-page",
+          "tab_title": "Titre dans la barre latérale",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
+        }
+      },
       "custom": {
         "title": "Entrée personnalisée",
         "description": "Définissez le titre, l'URL cible et les options.",
@@ -52,6 +62,16 @@
           "require_admin": "Administrateurs uniquement"
         }
       },
+      "edit_marketplace": {
+        "title": "Modifier Marketplace",
+        "description": "Modifiez l'entrée Marketplace de la barre latérale.",
+        "data": {
+          "template_item": "Sous-page",
+          "tab_title": "Titre dans la barre latérale",
+          "icon": "Icône",
+          "require_admin": "Administrateurs uniquement"
+        }
+      },
       "edit_custom": {
         "title": "Modifier l'entrée personnalisée",
         "description": "Modifiez l'entrée existante de la barre latérale.",
@@ -68,6 +88,7 @@
     "template_group": {
       "options": {
         "developer_tools": "Outils de développement",
+        "marketplace": "Marketplace",
         "custom": "Personnalisée"
       }
     },
@@ -78,7 +99,8 @@
         "template": "Modèles",
         "event": "Événements",
         "yaml": "YAML",
-        "statistics": "Statistiques"
+        "statistics": "Statistiques",
+        "marketplace": "Marketplace"
       }
     }
   }

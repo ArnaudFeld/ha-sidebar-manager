@@ -15,12 +15,19 @@ from .const import (
     DEFAULT_REQUIRE_ADMIN,
     DEVTOOLS_TEMPLATES,
     DOMAIN,
+    MARKETPLACE_TEMPLATES,
     TEMPLATE_GROUP_CUSTOM,
     TEMPLATE_GROUP_DEVTOOLS,
+    TEMPLATE_GROUP_MARKETPLACE,
 )
 
-GROUP_OPTIONS = [TEMPLATE_GROUP_DEVTOOLS, TEMPLATE_GROUP_CUSTOM]
+GROUP_OPTIONS = [
+    TEMPLATE_GROUP_DEVTOOLS,
+    TEMPLATE_GROUP_MARKETPLACE,
+    TEMPLATE_GROUP_CUSTOM,
+]
 DEVTOOLS_OPTIONS = list(DEVTOOLS_TEMPLATES)
+MARKETPLACE_OPTIONS = list(MARKETPLACE_TEMPLATES)
 
 
 def _group_selector() -> selector.SelectSelector:
@@ -83,9 +90,44 @@ def _devtools_schema(defaults: dict | None = None) -> vol.Schema:
                 CONF_ICON,
                 default=defaults.get(CONF_ICON, DEVTOOLS_TEMPLATES["state"]["icon"]),
             ): selector.IconSelector(),
+        vol.Optional(
+            CONF_REQUIRE_ADMIN,
+            default=defaults.get(CONF_REQUIRE_ADMIN, DEFAULT_REQUIRE_ADMIN),
+        ): selector.BooleanSelector(),
+        }
+    )
+
+
+def _marketplace_selector() -> selector.SelectSelector:
+    return selector.SelectSelector(
+        selector.SelectSelectorConfig(
+            options=MARKETPLACE_OPTIONS,
+            mode=selector.SelectSelectorMode.LIST,
+            translation_key="template_item",
+        )
+    )
+
+
+def _marketplace_schema(defaults: dict | None = None) -> vol.Schema:
+    defaults = defaults or {}
+    template = MARKETPLACE_TEMPLATES["marketplace"]
+    return vol.Schema(
+        {
+            vol.Required(
+                CONF_TEMPLATE_ITEM,
+                default=defaults.get(CONF_TEMPLATE_ITEM, "marketplace"),
+            ): _marketplace_selector(),
+            vol.Optional(
+                CONF_TAB_TITLE,
+                default=defaults.get(CONF_TAB_TITLE, ""),
+            ): selector.TextSelector(),
+            vol.Optional(
+                CONF_ICON,
+                default=defaults.get(CONF_ICON, template["icon"]),
+            ): selector.IconSelector(),
             vol.Optional(
                 CONF_REQUIRE_ADMIN,
-                default=defaults.get(CONF_REQUIRE_ADMIN, DEFAULT_REQUIRE_ADMIN),
+                default=defaults.get(CONF_REQUIRE_ADMIN, template["require_admin"]),
             ): selector.BooleanSelector(),
         }
     )
@@ -99,6 +141,8 @@ class HASidebarManagerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             group = user_input[CONF_TEMPLATE_GROUP]
             if group == TEMPLATE_GROUP_DEVTOOLS:
                 return await self.async_step_developer_tools()
+            if group == TEMPLATE_GROUP_MARKETPLACE:
+                return await self.async_step_marketplace()
             return await self.async_step_custom()
 
         schema = vol.Schema(
@@ -149,6 +193,46 @@ class HASidebarManagerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data_schema=_devtools_schema(defaults),
         )
 
+    async def async_step_marketplace(self, user_input=None):
+        if user_input is not None:
+            key = user_input[CONF_TEMPLATE_ITEM]
+            template = MARKETPLACE_TEMPLATES[key]
+            title = user_input.get(CONF_TAB_TITLE, "").strip()
+            icon = user_input.get(CONF_ICON, template["icon"])
+            require_admin = user_input.get(
+                CONF_REQUIRE_ADMIN,
+                template["require_admin"],
+            )
+
+            unique = f"{DOMAIN}_{key}_{template['url']}"
+            await self.async_set_unique_id(unique)
+            self._abort_if_unique_id_configured()
+
+            return self.async_create_entry(
+                title=title,
+                data={
+                    CONF_TAB_TITLE: title,
+                    CONF_URL: template["url"],
+                    CONF_ICON: icon,
+                    CONF_REQUIRE_ADMIN: require_admin,
+                    CONF_TEMPLATE_GROUP: TEMPLATE_GROUP_MARKETPLACE,
+                    CONF_TEMPLATE_ITEM: key,
+                },
+            )
+
+        defaults = {
+            CONF_TEMPLATE_ITEM: "marketplace",
+            CONF_TAB_TITLE: "",
+            CONF_ICON: MARKETPLACE_TEMPLATES["marketplace"]["icon"],
+            CONF_REQUIRE_ADMIN: MARKETPLACE_TEMPLATES["marketplace"][
+                "require_admin"
+            ],
+        }
+        return self.async_show_form(
+            step_id="marketplace",
+            data_schema=_marketplace_schema(defaults),
+        )
+
     async def async_step_custom(self, user_input=None):
         if user_input is not None:
             unique = f"{DOMAIN}_{user_input[CONF_TAB_TITLE]}_{user_input[CONF_URL]}"
@@ -178,6 +262,8 @@ class HASidebarManagerOptionsFlow(config_entries.OptionsFlow):
             group = user_input[CONF_TEMPLATE_GROUP]
             if group == TEMPLATE_GROUP_DEVTOOLS:
                 return await self.async_step_edit_devtools()
+            if group == TEMPLATE_GROUP_MARKETPLACE:
+                return await self.async_step_edit_marketplace()
             return await self.async_step_edit_custom()
 
         schema = vol.Schema(
@@ -233,6 +319,53 @@ class HASidebarManagerOptionsFlow(config_entries.OptionsFlow):
         return self.async_show_form(
             step_id="edit_devtools",
             data_schema=_devtools_schema(defaults),
+        )
+
+    async def async_step_edit_marketplace(self, user_input=None):
+        current_item = self._config_entry.data.get(
+            CONF_TEMPLATE_ITEM, "marketplace"
+        )
+
+        if user_input is not None:
+            key = user_input[CONF_TEMPLATE_ITEM]
+            template = MARKETPLACE_TEMPLATES[key]
+            title = user_input.get(CONF_TAB_TITLE, "").strip()
+            icon = user_input.get(CONF_ICON, template["icon"])
+            require_admin = user_input.get(
+                CONF_REQUIRE_ADMIN,
+                template["require_admin"],
+            )
+
+            new_data = {
+                **self._config_entry.data,
+                CONF_TAB_TITLE: title,
+                CONF_URL: template["url"],
+                CONF_ICON: icon,
+                CONF_REQUIRE_ADMIN: require_admin,
+                CONF_TEMPLATE_GROUP: TEMPLATE_GROUP_MARKETPLACE,
+                CONF_TEMPLATE_ITEM: key,
+            }
+
+            self.hass.config_entries.async_update_entry(
+                self._config_entry,
+                title=title,
+                data=new_data,
+            )
+            return self.async_create_entry(title="", data={})
+
+        template = MARKETPLACE_TEMPLATES[current_item]
+        defaults = {
+            CONF_TEMPLATE_ITEM: current_item,
+            CONF_TAB_TITLE: self._config_entry.data.get(CONF_TAB_TITLE, ""),
+            CONF_ICON: self._config_entry.data.get(CONF_ICON, template["icon"]),
+            CONF_REQUIRE_ADMIN: self._config_entry.data.get(
+                CONF_REQUIRE_ADMIN,
+                template["require_admin"],
+            ),
+        }
+        return self.async_show_form(
+            step_id="edit_marketplace",
+            data_schema=_marketplace_schema(defaults),
         )
 
     async def async_step_edit_custom(self, user_input=None):

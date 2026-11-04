@@ -25,6 +25,7 @@ from .const import (
     DEFAULT_REQUIRE_ADMIN,
     DOMAIN,
     TEMPLATE_GROUP_DEVTOOLS,
+    TEMPLATE_GROUP_MARKETPLACE,
 )
 
 LOGGER = logging.getLogger(__name__)
@@ -166,7 +167,10 @@ async def _default_title(hass: HomeAssistant, entry: ConfigEntry) -> str:
     label is resolved here rather than when the entry is created so the sidebar
     follows the instance language.
     """
-    if entry.data.get(CONF_TEMPLATE_GROUP) != TEMPLATE_GROUP_DEVTOOLS:
+    if entry.data.get(CONF_TEMPLATE_GROUP) not in (
+        TEMPLATE_GROUP_DEVTOOLS,
+        TEMPLATE_GROUP_MARKETPLACE,
+    ):
         return ""
 
     item = entry.data.get(CONF_TEMPLATE_ITEM)

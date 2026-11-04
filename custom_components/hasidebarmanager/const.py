@@ -12,6 +12,7 @@ DEFAULT_REQUIRE_ADMIN = True
 
 TEMPLATE_GROUP_CUSTOM = "custom"
 TEMPLATE_GROUP_DEVTOOLS = "developer_tools"
+TEMPLATE_GROUP_MARKETPLACE = "marketplace"
 
 DEVTOOLS_TEMPLATES = {
     "state": {
@@ -42,6 +43,14 @@ DEVTOOLS_TEMPLATES = {
     "statistics": {
         "url": "/config/developer-tools/statistics",
         "icon": "mdi:chart-bar",
+        "require_admin": True,
+    },
+}
+
+MARKETPLACE_TEMPLATES = {
+    "marketplace": {
+        "url": "/marketplace",
+        "icon": "mdi:store",
         "require_admin": True,
     },
 }
