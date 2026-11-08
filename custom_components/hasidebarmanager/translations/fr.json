@@ -100,6 +100,8 @@
         "event": "Événements",
         "yaml": "YAML",
         "statistics": "Statistiques",
+        "action_history": "Historique des actions",
+        "assist": "Assist",
         "marketplace": "Marketplace"
       }
     }

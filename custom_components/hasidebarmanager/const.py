@@ -45,6 +45,16 @@ DEVTOOLS_TEMPLATES = {
         "icon": "mdi:chart-bar",
         "require_admin": True,
     },
+    "action_history": {
+        "url": "/config/tools/action-history",
+        "icon": "mdi:history",
+        "require_admin": True,
+    },
+    "assist": {
+        "url": "/config/tools/assist",
+        "icon": "mdi:assistant",
+        "require_admin": True,
+    },
 }
 
 MARKETPLACE_TEMPLATES = {

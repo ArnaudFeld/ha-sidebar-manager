@@ -100,6 +100,8 @@
         "event": "Gebeurtenissen",
         "yaml": "YAML",
         "statistics": "Statistieken",
+        "action_history": "Actiegeschiedenis",
+        "assist": "Assist",
         "marketplace": "Marketplace"
       }
     }

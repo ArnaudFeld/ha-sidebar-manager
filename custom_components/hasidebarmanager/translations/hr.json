@@ -100,6 +100,8 @@
         "event": "Događaji",
         "yaml": "YAML",
         "statistics": "Statistika",
+        "action_history": "Povijest radnji",
+        "assist": "Assist",
         "marketplace": "Marketplace"
       }
     }
